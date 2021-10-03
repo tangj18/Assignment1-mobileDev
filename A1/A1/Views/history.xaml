@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A1.Views.history"
+             Title="Purchase History">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <ListView x:Name="historyList"
+                      Grid.Row="6"
+                      Grid.ColumnSpan="4"
+                      BackgroundColor="white"
+                      ItemSelected="onSelect">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         Padding="20,0">
+                                <StackLayout HorizontalOptions="StartAndExpand"
+                                             Padding="0">
+                                    <StackLayout>
+                                        <Label Text="{Binding name}"
+                                               VerticalOptions="Center"
+                                               FontSize="15"
+                                               TextColor="black"></Label>
+                                    </StackLayout>
+                                    <Label Text="{Binding quantity}"
+                                           TextColor="black"
+                                           FontSize="13"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

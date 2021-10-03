@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A1.Views.addItem"
+             Title="Add New Product">
+    <ContentPage.Content>
+
+        <StackLayout Padding="20, 50">
+            <Label Text="New Product"
+                   FontSize="30"
+                   TextColor="black"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2.5*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0"
+                       Text="Product Name:"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       TextColor="black" />
+                <Entry Grid.Column="1"
+                       Placeholder="Enter Product name"
+                       VerticalOptions="Center"
+                       x:Name="newName" />
+
+                <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Price:"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       TextColor="black" />
+                <Entry Grid.Column="1"
+                       Grid.Row="1"
+                       Placeholder="Enter Product Price"
+                       VerticalOptions="Center"
+                       x:Name="newPrice" />
+
+                <Label Grid.Column="0"
+                       Grid.Row="2"
+                       Text="Quantity:"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       TextColor="black" />
+                <Entry Grid.Column="1"
+                       Grid.Row="2"
+                       Placeholder="Enter Product Quantity"
+                       VerticalOptions="Center"
+                       x:Name="newQuant" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="saveItem"></ToolbarItem>
+        <ToolbarItem Text="Cancel" Clicked="cancelItem"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+</ContentPage>

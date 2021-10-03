@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A1.Views.restock"
+             Title="Restock Products">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Entry Placeholder="Enter new quantity"
+                   x:Name="restockQuantity"></Entry>
+            <Grid VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  Padding="100, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="restock"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        BackgroundColor="Transparent"
+                        TextColor="blue"
+                        Clicked="restockButton"/>
+
+                <Button Text="Cancel"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BackgroundColor="Transparent"
+                        TextColor="blue" 
+                        Clicked="cancelButton"/>
+
+            </Grid>
+            <StackLayout>
+                <ListView x:Name="stockList"
+                          Grid.Row="6"
+                          Grid.ColumnSpan="4"
+                          BackgroundColor="white"
+                          ItemSelected="onSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal"
+                                             Padding="20,0">
+                                    <StackLayout HorizontalOptions="StartAndExpand"
+                                                 Padding="0"
+                                                 VerticalOptions="Center">
+
+                                        <Label Text="{Binding name}"
+                                               VerticalOptions="Center"
+                                               FontSize="20"
+                                               TextColor="black"></Label>
+
+                                    </StackLayout>
+                                    <Label Text="{Binding number}"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="End"
+                                           FontSize="20"
+                                           TextColor="black"></Label>
+
+                                </StackLayout>
+
+                            </ViewCell>
+
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>
